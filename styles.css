@@ -41,6 +41,7 @@ h1 {
     height: 100px;
     perspective: 1000px;
     margin: 20px auto;
+    
 }
 
 .dice {
@@ -49,6 +50,7 @@ h1 {
     position: relative;
     transform-style: preserve-3d;
     transform: rotateX(0deg) rotateY(0deg);
+   
 }
 
 .face {

@@ -16,7 +16,13 @@ function generateDots(number) {
 document.getElementById('rollButton').addEventListener('click', function() {
     var dice = document.getElementById('dice');
     var currentRoll = Math.floor(Math.random() * 6) + 1;
-    var exercises = ['squat', 'pompe sur les genoux', 'planche toucher épaule', 'échange de passe en appuis unipodal', 'fente latérale',];
+    var exercises = ['Squat ou Demi-squat', 'Pompes ou Pompe à genoux', 
+    'Échange de passes en appui unipodal ou bipodal(D/G)', 
+    'Fentes latérales(D/G)', 'Assis-debout (assis complètement sur les fesses)', 
+    'Mountain climbers(D/G)', 'Planche, toucher de la main opposée à l épaule(D/G)', 
+    'Planche dynamique avec rotation du bassin à droite et à gauche (obliques)', 
+    'Hip Thrust', 
+    'Passage talons-pointes des pieds (flexion dorsale et plantaire de la cheville en position debout en appui bipodal)'];
     var selectedExercise = exercises[Math.floor(Math.random() * exercises.length)];
 
     dice.style.animation = 'rollDice 2s infinite linear';
@@ -32,7 +38,7 @@ document.getElementById('rollButton').addEventListener('click', function() {
         dice.querySelector('.bottom').innerHTML = generateDots(7 - (currentRoll === 6 ? 4 : currentRoll === 5 ? 3 : 2));
 
         if (!isFirstRoll) {
-            document.getElementById('exercise-instruction').innerHTML = `Exercice: <span>${selectedExercise}</span>, répétez ${currentRoll} fois.`;
+            document.getElementById('exercise-instruction').innerHTML = `Exercice: <span>${selectedExercise}</span>, <br> répétez ${currentRoll} fois.</br>`;
         } else {
             document.getElementById('exercise-instruction').innerHTML = `Premier lancer: <span>${currentRoll}</span>.`;
             isFirstRoll = false;
